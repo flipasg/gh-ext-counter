@@ -22,8 +22,15 @@ const serializeRepository = (repository: GithubRepository): Repository => ({
 
 const serializeTree = (tree: GithubTree): Tree => tree.tree
 
-const findRepository = async ({ owner, repository }: RepositoryParams) =>
-  serializeRepository((await client.get(`${owner}/${repository}`)).data)
+const findRepository = async ({ owner, repository }: RepositoryParams) => {
+  try {
+    return serializeRepository(
+      (await client.get(`${owner}/${repository}`)).data,
+    )
+  } catch (error: any) {
+    throw new Error(error.message)
+  }
+}
 
 const findTree = async ({ url }: TreeParams) =>
   serializeTree((await client.get(url)).data)
