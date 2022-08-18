@@ -1,14 +1,13 @@
-import React, { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-import useQueryParameters from '../hooks/useQueryParameters';
+import useRepository from '../hooks/useRepository'
 
 export default function ExtensionCounter() {
-  const {owner, repository} = useQueryParameters()
+  const { owner, repository, items } = useRepository()
 
   return (
     <div className='App'>
-      Owner: {owner} <br/>
-      Repository: {repository}
+      Owner: {owner} <br />
+      Repository: {repository} <br />
+      Items: {items}
     </div>
-  );
+  )
 }
