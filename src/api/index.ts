@@ -32,7 +32,12 @@ const findRepository = async ({ owner, repository }: RepositoryParams) => {
   }
 }
 
-const findTree = async ({ url }: TreeParams) =>
-  serializeTree((await client.get(url)).data)
+const findTree = async ({ url }: TreeParams) => {
+  try {
+    return serializeTree((await client.get(url)).data)
+  } catch (error: any) {
+    throw new Error(error.message)
+  }
+}
 
 export { findRepository, findTree }
