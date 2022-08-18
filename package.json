@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "homepage": "https://{flipasg.github.io/gh-ext-counter",
     "preview": "vite preview",
     "start": "vite",
     "serve": "vite preview --port 3000",
