@@ -1,6 +1,6 @@
 export interface RepositoryParams {
-  owner: string
-  repository: string
+  owner: string | null
+  repository: string | null
 }
 
 export interface TreeParams {
