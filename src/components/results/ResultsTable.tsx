@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow'
 import TableSortLabel from '@mui/material/TableSortLabel'
 import { visuallyHidden } from '@mui/utils'
 import { ChangeEvent, MouseEvent, useMemo, useState } from 'react'
-import ResultsTableSearcher from './ResultTableSearcher'
+import ResultsTableSearcher from './ResultsTableSearcher'
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
