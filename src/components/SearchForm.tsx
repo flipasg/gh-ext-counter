@@ -39,6 +39,7 @@ export default function SearchForm({
                   onChange={onChange}
                   value={value}
                   label={'Owner'}
+                  inputProps={{ 'data-testid': 'owner' }}
                 />
               )}
             />
@@ -56,10 +57,12 @@ export default function SearchForm({
                   onChange={onChange}
                   value={value}
                   label={'Repository'}
+                  inputProps={{ 'data-testid': 'repository' }}
                 />
               )}
             />
             <Button
+              data-testid='submitButton'
               variant='text'
               startIcon={<SearchIcon />}
               onClick={handleSubmit(onSubmit)}

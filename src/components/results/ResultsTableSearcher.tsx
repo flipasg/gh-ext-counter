@@ -23,6 +23,7 @@ export default function ResultsTableSearcher({
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
           onChange(event.target.value.toLowerCase() || undefined)
         }
+        inputProps={{ 'data-testid': 'searcher' }}
       />
     </Box>
   )
